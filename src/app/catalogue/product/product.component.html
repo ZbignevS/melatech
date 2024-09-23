@@ -1,0 +1,28 @@
+<ng-container *ngIf="data">
+  <div class="product">
+    <div class="product-details">
+      <img [src]="getImageUrl(data)" [alt]="data.name" />
+      <div class="product-info">
+        <div class="name">{{ data.name }}</div>
+        <div class="description">{{ data.description }}</div>
+        <div class="category">Part Type: {{ data.category }}</div>
+      </div>
+    </div>
+    <div class="price">
+      <div
+        style="font-weight: bolder"
+        [ngStyle]="{
+          color: data.discount > 0 ? 'red' : '',
+          textDecoration: data.discount > 0 ? 'line-through' : ''
+        }"
+        [ngClass]="getDiscountedClasses(data)"
+      >
+        {{ data.price | currency : 'EUR' }}
+      </div>
+      <div class="discount" *ngIf="data.discount > 0">
+        {{ data.price * (1 - data.discount) | currency : 'EUR' }}
+      </div>
+      <button class="cta" (click)="addToCart(data)">Buy</button>
+    </div>
+  </div>
+</ng-container>

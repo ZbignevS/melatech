@@ -5,18 +5,24 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { CatalogueComponent } from './catalogue/catalogue.component';
 import { SiteHeaderComponent } from './site-header/site-header.component';
+import { ProductComponent } from './catalogue/product/product.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'catalogue', component: CatalogueComponent },
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     CatalogueComponent,
-    SiteHeaderComponent
+    SiteHeaderComponent,
+    ProductComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule, RouterModule.forRoot(routes)],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

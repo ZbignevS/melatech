@@ -6,37 +6,10 @@
     <a class="button" (click)="setFilter('Bases')">Bases</a>
     <a class="button" (click)="setFilter('')">All</a>
   </div>
-
   <div *ngIf="loading$ | async">Loading products...</div>
-
   <ul class="products">
     <li class="product-item" *ngFor="let product of filteredProducts$ | async">
-      <div class="product">
-        <div class="product-details">
-          <img [src]="getImageUrl(product)" [alt]="product.name" />
-          <div class="product-info">
-            <div class="name">{{ product?.name }}</div>
-            <div class="description">{{ product?.description }}</div>
-            <div class="category">Part Type: {{ product?.category }}</div>
-          </div>
-        </div>
-        <div class="price">
-          <div
-            style="font-weight: bolder"
-            [ngStyle]="{
-              color: product.discount > 0 ? 'red' : '',
-              textDecoration: product.discount > 0 ? 'line-through' : ''
-            }"
-            [ngClass]="getDiscountedClasses(product)"
-          >
-            {{ product.price | currency : 'EUR' }}
-          </div>
-          <div class="discount" *ngIf="product.discount > 0">
-            {{ product.price * (1 - product.discount) | currency : 'EUR' }}
-          </div>
-          <button class="cta" (click)="addToCart(product)">Buy</button>
-        </div>
-      </div>
+      <bot-product [data]="product"></bot-product>
     </li>
   </ul>
 </div>
