@@ -6,10 +6,19 @@
     <a class="button" (click)="setFilter('Bases')">Bases</a>
     <a class="button" (click)="setFilter('')">All</a>
   </div>
-  <div *ngIf="loading$ | async">Loading products...</div>
-  <ul class="products">
+  <ul
+    class="products"
+    [ngStyle]="{
+    opacity: (loading$ | async) ? '0.3' : '1',
+
+  }"
+  >
     <li class="product-item" *ngFor="let product of filteredProducts$ | async">
       <bot-product [data]="product"></bot-product>
     </li>
   </ul>
 </div>
+
+<ng-container *ngIf="loading$ | async"
+  ><mat-spinner></mat-spinner
+></ng-container>
