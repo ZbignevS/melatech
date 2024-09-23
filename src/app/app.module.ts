@@ -10,6 +10,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatButtonModule } from '@angular/material/button';
+import { MatChipsModule } from '@angular/material/chips';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -27,6 +29,8 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     MatProgressSpinnerModule,
+    MatButtonModule,
+    MatChipsModule,
     RouterModule.forRoot(routes),
   ],
   providers: [provideAnimationsAsync()],

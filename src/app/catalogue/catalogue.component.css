@@ -16,14 +16,11 @@ a {
   flex-direction: column;
 }
 
-.filters {
+mat-chip-set {
   display: flex;
   justify-content: space-between;
   padding: 25px 200px;
-}
-
-.filters button {
-  width: 100px;
+  margin: 10px auto;
 }
 
 .product-item {
