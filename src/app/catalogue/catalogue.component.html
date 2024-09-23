@@ -23,7 +23,10 @@
         <div class="price">
           <div
             style="font-weight: bolder"
-            [ngStyle]="{ color: product.discount > 0 ? 'red' : '' }"
+            [ngStyle]="{
+              color: product.discount > 0 ? 'red' : '',
+              textDecoration: product.discount > 0 ? 'line-through' : ''
+            }"
             [ngClass]="getDiscountedClasses(product)"
           >
             {{ product.price | currency : 'EUR' }}

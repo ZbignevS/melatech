@@ -189,7 +189,7 @@ export class CatalogueComponent {
     switchMap((filterValue) => {
       this.loading$.next(true);
       return of(this.products).pipe(
-        delay(2000),
+        delay(500),
         map((products) => {
           const filtered = products.filter((product) =>
             filterValue ? product.category.includes(filterValue) : true
