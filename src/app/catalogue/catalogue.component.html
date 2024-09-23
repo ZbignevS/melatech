@@ -1,15 +1,17 @@
 <div class="container">
   <div class="filters">
-    <a class="button bold" (click)="filter = 'Heads'">Heads</a>
-    <a class="button" (click)="filter = 'Arms'">Arms</a>
-    <a class="button" (click)="filter = 'Torsos'">Torsos</a>
-    <a class="button" (click)="filter = 'Bases'">Bases</a>
-    <a class="button" (click)="filter = ''">All</a>
+    <a class="button" (click)="setFilter('Heads')">Heads</a>
+    <a class="button" (click)="setFilter('Arms')">Arms</a>
+    <a class="button" (click)="setFilter('Torsos')">Torsos</a>
+    <a class="button" (click)="setFilter('Bases')">Bases</a>
+    <a class="button" (click)="setFilter('')">All</a>
   </div>
 
+  <div *ngIf="loading$ | async">Loading products...</div>
+
   <ul class="products">
-    <li class="product-item">
-      <div class="product" *ngFor="let product of getFilteredProducts()">
+    <li class="product-item" *ngFor="let product of filteredProducts$ | async">
+      <div class="product">
         <div class="product-details">
           <img [src]="getImageUrl(product)" [alt]="product.name" />
           <div class="product-info">
@@ -24,10 +26,10 @@
             [ngStyle]="{ color: product.discount > 0 ? 'red' : '' }"
             [ngClass]="getDiscountedClasses(product)"
           >
-            {{ product.price | currency : "GBP" }}
+            {{ product.price | currency : 'EUR' }}
           </div>
           <div class="discount" *ngIf="product.discount > 0">
-            {{ product.price * (1 - product.discount) | currency : "GBP" }}
+            {{ product.price * (1 - product.discount) | currency : 'EUR' }}
           </div>
           <button class="cta" (click)="addToCart(product)">Buy</button>
         </div>
