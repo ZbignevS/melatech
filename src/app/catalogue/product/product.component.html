@@ -22,7 +22,7 @@
       <div class="discount" *ngIf="data.discount > 0">
         {{ data.price * (1 - data.discount) | currency : 'EUR' }}
       </div>
-      <button class="cta" (click)="addToCart(data)">Buy</button>
+      <button mat-flat-button class="cta" (click)="addToCart(data)">Buy</button>
     </div>
   </div>
 </ng-container>
