@@ -1,0 +1,17 @@
+.rule-card {
+  padding: 30px;
+  border-radius: 30px;
+  margin-bottom: 30px;
+  border: #005ebb 1px solid;
+  display: flex;
+  background-color: white;
+}
+
+mat-expansion-panel {
+  box-shadow: none !important;
+  background: white;
+}
+
+mat-expansion-panel-header:hover {
+  background-color: aliceblue !important;
+}
