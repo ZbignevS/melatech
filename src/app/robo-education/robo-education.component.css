@@ -1,0 +1,10 @@
+.header {
+  background-image: url("/assets/images/robo-education/header-bg.png");
+  height: 344px;
+  background-repeat: none;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: aliceblue;
+  width: 100%;
+}
