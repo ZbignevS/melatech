@@ -7,14 +7,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { CatalogueComponent } from './catalogue/catalogue.component';
-import { SiteHeaderComponent } from './site-header/site-header.component';
-import { ProductComponent } from './catalogue/product/product.component';
 import { RouterModule, Routes } from '@angular/router';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { MatButtonModule } from '@angular/material/button';
-import { MatChipsModule } from '@angular/material/chips';
+import { SiteHeaderComponent } from './site-header/site-header.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -22,20 +17,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    CatalogueComponent,
-    SiteHeaderComponent,
-    ProductComponent,
-  ],
-  imports: [
-    BrowserModule,
-    MatProgressSpinnerModule,
-    MatButtonModule,
-    MatChipsModule,
-    RouterModule.forRoot(routes),
-  ],
+  declarations: [AppComponent, SiteHeaderComponent],
+  imports: [BrowserModule, RouterModule.forRoot(routes)],
   providers: [
     provideAnimationsAsync(),
     provideExperimentalZonelessChangeDetection(),

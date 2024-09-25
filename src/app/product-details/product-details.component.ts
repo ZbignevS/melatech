@@ -11,6 +11,7 @@ import { IProduct } from '../catalogue/product.model';
   selector: 'bot-product-details',
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.css'],
+  standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductDetailsComponent {
