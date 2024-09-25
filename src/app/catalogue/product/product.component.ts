@@ -1,10 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { IProduct } from '../product.model';
 
 @Component({
   selector: 'bot-product',
   templateUrl: './product.component.html',
   styleUrl: './product.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductComponent {
   @Input() data!: IProduct;

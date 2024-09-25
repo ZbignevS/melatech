@@ -1,4 +1,7 @@
-import { NgModule } from '@angular/core';
+import {
+  NgModule,
+  provideExperimentalZonelessChangeDetection,
+} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -33,7 +36,10 @@ const routes: Routes = [
     MatChipsModule,
     RouterModule.forRoot(routes),
   ],
-  providers: [provideAnimationsAsync()],
+  providers: [
+    provideAnimationsAsync(),
+    provideExperimentalZonelessChangeDetection(),
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

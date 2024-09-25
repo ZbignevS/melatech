@@ -1,10 +1,17 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
-import { IProduct } from "../catalogue/product.model";
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
+import { IProduct } from '../catalogue/product.model';
 
 @Component({
-  selector: "bot-product-details",
-  templateUrl: "./product-details.component.html",
-  styleUrls: ["./product-details.component.css"],
+  selector: 'bot-product-details',
+  templateUrl: './product-details.component.html',
+  styleUrls: ['./product-details.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductDetailsComponent {
   @Input() product!: IProduct;
