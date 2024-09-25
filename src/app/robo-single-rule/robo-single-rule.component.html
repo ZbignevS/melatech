@@ -1,0 +1,32 @@
+<mat-card #ruleContent class="rule-card" appearance="outlined">
+  <mat-card-header>
+    <mat-card-title-group>
+      <mat-card-title></mat-card-title>
+    </mat-card-title-group>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            # {{ roboRule.id }}: {{ roboRule.title }}</mat-panel-title
+          >
+        </mat-expansion-panel-header>
+
+        <!-- @defer (on hover(ruleContent)) {
+        <bot-robo-single-rule-content
+          [description]="roboRule.description"
+          [imgUrl]="roboRule.imgUrl"
+        ></bot-robo-single-rule-content>
+        } @placeholder {
+        <div>Rule content placeholder</div>
+        } -->
+
+        <bot-robo-single-rule-content
+          [description]="roboRule.description"
+          [imgUrl]="roboRule.imgUrl"
+        ></bot-robo-single-rule-content>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-card-content>
+</mat-card>
