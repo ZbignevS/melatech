@@ -24,9 +24,6 @@
       "dom"
     ]
   },
-  "paths": {
-    "tslib" : ["/node_modules/tslib/tslib.d.ts"]
-  },
   "importHelpers": false,
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
