@@ -19,6 +19,13 @@ import { MatChipsModule } from '@angular/material/chips';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'catalogue', component: CatalogueComponent },
+  {
+    path: 'education',
+    loadComponent: () =>
+      import('./robo-education/robo-education.component').then(
+        (mod) => mod.RoboEducationComponent
+      ),
+  },
 ];
 
 @NgModule({

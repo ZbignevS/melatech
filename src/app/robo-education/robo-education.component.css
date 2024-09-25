@@ -1,0 +1,45 @@
+.header {
+  background-image: url("/assets/images/robo-education/header-bg.png");
+  height: 344px;
+  background-repeat: none;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: aliceblue;
+  width: 100%;
+}
+
+.container {
+  padding: 64px;
+  background-color: aliceblue;
+}
+
+.lesson-container,
+.quiz-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 4px;
+}
+
+.lesson-container {
+  gap: 64px !important;
+}
+
+vg-player {
+  justify-content: center !important;
+}
+
+.quiz-btn {
+  background-color: #005ebb;
+  color: white;
+}
+
+.loading-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}

@@ -1,0 +1,19 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title class="info">Robo Info Of The Day</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="content" [@fadeAnimation]="state">
+    <p>
+      {{ info }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button
+      mat-raised-button
+      style="background-color: #005ebb; color: white"
+      (click)="generateInfo()"
+    >
+      Generate
+    </button>
+  </mat-card-actions>
+</mat-card>
