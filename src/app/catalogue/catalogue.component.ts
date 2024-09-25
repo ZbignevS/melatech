@@ -1,4 +1,8 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+} from '@angular/core';
 import { IProduct } from './product.model';
 import { ProductsService } from '../core/products.service';
 import { BehaviorSubject, Observable } from 'rxjs';
@@ -7,6 +11,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
   selector: 'bot-catalogue',
   templateUrl: './catalogue.component.html',
   styleUrls: ['./catalogue.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CatalogueComponent {
   loading$!: BehaviorSubject<boolean>;

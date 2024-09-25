@@ -1,13 +1,13 @@
-import { Component } from "@angular/core";
-import { MatButtonModule } from "@angular/material/button";
-import { MatCardModule } from "@angular/material/card";
-import { MatRadioModule } from "@angular/material/radio";
-import { Questions } from "../data/questions";
-import { CountdownComponent } from "ngx-countdown";
-import { CommonModule } from "@angular/common";
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatRadioModule } from '@angular/material/radio';
+import { Questions } from '../data/questions';
+import { CountdownComponent } from 'ngx-countdown';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: "bot-robo-quiz-questions",
+  selector: 'bot-robo-quiz-questions',
   standalone: true,
   imports: [
     MatCardModule,
@@ -16,8 +16,9 @@ import { CommonModule } from "@angular/common";
     CountdownComponent,
     CommonModule,
   ],
-  templateUrl: "./robo-quiz-questions.component.html",
-  styleUrl: "./robo-quiz-questions.component.css",
+  templateUrl: './robo-quiz-questions.component.html',
+  styleUrl: './robo-quiz-questions.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RoboQuizQuestionsComponent {
   questions: any = Questions;
